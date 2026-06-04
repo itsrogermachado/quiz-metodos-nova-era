@@ -28,8 +28,10 @@
 
 body {
     font-family: 'Outfit', sans-serif;
-    background-color: var(--bg-color);
-    background-image: radial-gradient(circle at 50% 0%, #ffffff 0%, #f5f6f8 70%);
+    /* Animated Gradient Background */
+    background: linear-gradient(-45deg, #f5f6f8, #e4e8f0, #ffffff, #d8dde6);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
     color: var(--text-main);
     display: flex;
     justify-content: center;
@@ -38,16 +40,25 @@ body {
     padding: 1rem;
 }
 
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
 /* Container & Layout */
 .app-container {
     width: 100%;
     max-width: 500px;
-    background: var(--card-bg);
+    /* Glassmorphism */
+    background: rgba(255, 255, 255, 0.65);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
     border-radius: 24px;
-    box-shadow: var(--shadow-soft);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1), inset 0 0 0 1px rgba(255, 255, 255, 0.4);
     overflow: hidden;
     position: relative;
-    border: 1px solid rgba(255, 255, 255, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.5);
 }
 
 /* Header */
@@ -84,6 +95,25 @@ body {
     background: linear-gradient(90deg, var(--silver-dark), var(--text-main));
     border-radius: 10px;
     transition: width var(--transition-smooth);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Shine effect on progress bar */
+.progress-bar::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.4) 50%, rgba(255,255,255,0) 100%);
+    animation: shine 2s infinite;
+}
+
+@keyframes shine {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
 }
 
 /* Screens */
@@ -156,10 +186,31 @@ p {
     background: linear-gradient(135deg, var(--text-main), var(--silver-dark));
     color: white;
     box-shadow: 0 4px 15px rgba(45, 49, 54, 0.2);
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+/* Sweep hover glow effect */
+.btn-primary::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: left 0.5s ease;
+    z-index: -1;
+}
+
+.btn-primary:hover::before {
+    left: 100%;
 }
 
 .btn-primary:hover {
-    box-shadow: 0 6px 20px rgba(45, 49, 54, 0.3);
+    box-shadow: 0 8px 25px rgba(45, 49, 54, 0.4);
+    transform: translateY(-2px);
 }
 
 /* Quiz Options */
@@ -173,22 +224,26 @@ p {
     width: 100%;
     padding: 1.2rem;
     text-align: left;
-    background: var(--bg-color);
-    border: 1px solid #e0e5ec;
+    background: rgba(255, 255, 255, 0.5); /* Semi-transparent */
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.8);
     border-radius: 12px;
     font-family: inherit;
     font-size: 1rem;
     font-weight: 400;
     color: var(--text-main);
     cursor: pointer;
-    transition: all var(--transition-fast);
+    transition: all var(--transition-smooth);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.02);
 }
 
 .option-btn:hover {
-    background: var(--card-bg);
-    border-color: var(--silver-accent);
-    box-shadow: var(--shadow-inner);
-    transform: translateY(-2px);
+    background: rgba(255, 255, 255, 0.9);
+    border-color: transparent;
+    /* Neon Glow Effect */
+    box-shadow: 0 0 20px rgba(106, 113, 122, 0.2), inset 0 2px 4px rgba(255, 255, 255, 1);
+    transform: translateY(-3px) scale(1.02);
+    color: #000;
 }
 
 /* Loading Screen */
