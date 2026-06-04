@@ -351,21 +351,21 @@ p {
     left: 0;
     width: 100%;
     text-align: center;
-    padding: 10px;
-    font-size: 0.6rem;
-    color: rgba(0, 0, 0, 0.3);
+    padding: 4px;
+    font-size: 0.45rem;
+    color: rgba(0, 0, 0, 0.2);
     background-color: transparent;
     z-index: 10;
     pointer-events: none; /* Let clicks pass through if needed, except on links */
 }
 
 .app-footer p {
-    margin-bottom: 2px;
-    line-height: 1.2;
+    margin-bottom: 1px;
+    line-height: 1.1;
 }
 
 .app-footer a {
-    color: rgba(0, 0, 0, 0.4);
+    color: rgba(0, 0, 0, 0.3);
     text-decoration: none;
     font-weight: 400;
     pointer-events: auto; /* Enable clicks on the link */
