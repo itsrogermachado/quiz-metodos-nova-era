@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avaliação - Nova Era</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Meta Pixel Code -->
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '835978482567087');
+    fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=835978482567087&ev=PageView&noscript=1"
+    /></noscript>
+    <!-- End Meta Pixel Code -->
+</head>
+<body>
+    <div class="app-container">
+        
+        <!-- Header / Logo -->
+        <header class="header">
+            <h1 class="logo-text">NOVA ERA</h1>
+            <div class="progress-container" id="progressContainer" style="display: none;">
+                <div class="progress-bar" id="progressBar"></div>
+            </div>
+        </header>
+
+        <!-- Main Content Area -->
+        <main class="content-area">
+            
+            <!-- Screen 1: Welcome -->
+            <section id="screen-welcome" class="screen active">
+                <div class="welcome-content">
+                    <h2>Descubra seu Potencial</h2>
+                    <p>Responda a este rápido diagnóstico de 7 perguntas para descobrir se você está qualificado para ingressar no mercado de métodos e transformar sua realidade financeira.</p>
+                    <button class="btn btn-primary" id="startBtn">Iniciar Avaliação</button>
+                </div>
+            </section>
+
+            <!-- Screen 2: Quiz -->
+            <section id="screen-quiz" class="screen">
+                <h2 id="questionText" class="question-title">Carregando pergunta...</h2>
+                <div id="optionsContainer" class="options-container">
+                    <!-- Options injected via JS -->
+                </div>
+            </section>
+
+            <!-- Screen 3: Loading / Calculating -->
+            <section id="screen-loading" class="screen">
+                <div class="loading-content">
+                    <div class="spinner"></div>
+                    <h2 class="loading-text">Analisando seu Perfil...</h2>
+                    <p class="loading-subtext">Calculando sua aptidão com base nas respostas.</p>
+                </div>
+            </section>
+
+            <!-- Screen 4: Result -->
+            <section id="screen-result" class="screen">
+                <div class="result-content">
+                    <div class="result-badge">
+                        <span id="scoreText">95</span>%
+                    </div>
+                    <h2 class="result-title">Parabéns, você está apto!</h2>
+                    <p class="result-desc">De acordo com o nosso cálculo, você possui um alto nível de aptidão para ingressar no mercado de métodos e começar a mudar sua vida hoje.</p>
+                    <p class="result-cta-text">Toque no botão abaixo para receber seu plano de ação no WhatsApp.</p>
+                    
+                    <div class="timer-container">
+                        <p class="timer-text">Seu link de acesso expira em: <span id="timerDisplay">10:00</span></p>
+                    </div>
+
+                    <!-- CTA Button with WhatsApp Link -->
+                    <a href="https://wa.me/message/RSXVQVFKJFXKA1" id="whatsappBtn" class="btn btn-whatsapp pulse-animation" target="_blank">
+                        Liberar Acesso no WhatsApp
+                    </a>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    <!-- Footer for Meta Ads Compliance -->
+    <footer class="app-footer">
+        <p>Este site não é afiliado ao Facebook ou a qualquer entidade do Facebook. Depois que você sair do Facebook, a responsabilidade não é deles e sim do nosso site.</p>
+        <p>
+            <a href="politica-de-privacidade.html" target="_blank">Políticas de Privacidade e Termos de Uso</a>
+        </p>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
